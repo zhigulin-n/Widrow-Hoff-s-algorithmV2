@@ -28,7 +28,7 @@ namespace ConsoleApp5
             double schetch = 0;
             int number = 0;
 
-            while(sum > 0.4)
+            while(cnt < 100)
             {
                 Console.WriteLine($"Итерация {cnt + 1}");
                 Console.WriteLine($"w1 = {w1}, w2 = {w2}, w3 = {w3}, S = {S}");
@@ -72,31 +72,27 @@ namespace ConsoleApp5
                     w1 = Math.Round(w1 - mass_a[1] * (y2 - mass_y[1]) * mass[1, 0], 5);
                     w2 = Math.Round(w2 - mass_a[1] * (y2 - mass_y[1]) * mass[1, 1], 5);
                     w3 = Math.Round(w3 - mass_a[1] * (y2 - mass_y[1]) * mass[1, 2], 5);
-                    S = Math.Round(S + mass_a[1] * (y1 - mass_y[0]), 5);
+                    S = Math.Round(S + mass_a[1] * (y2 - mass_y[1]), 5);
                 } else if(number == 2)
                 {
                     w1 = Math.Round(w1 - mass_a[2] * (y3 - mass_y[2]) * mass[2, 0], 5);
                     w2 = Math.Round(w2 - mass_a[2] * (y3 - mass_y[2]) * mass[2, 1], 5);
                     w3 = Math.Round(w3 - mass_a[2] * (y3 - mass_y[2]) * mass[2, 2], 5);
-                    S = Math.Round(S + mass_a[2] * (y1 - mass_y[0]), 5);
+                    S = Math.Round(S + mass_a[2] * (y3 - mass_y[2]), 5);
                 } else if(number == 3)
                 {
                     w1 = Math.Round(w1 - mass_a[3] * (y4 - mass_y[3]) * mass[3, 0], 5);
                     w2 = Math.Round(w2 - mass_a[3] * (y4 - mass_y[3]) * mass[3, 1], 5);
                     w3 = Math.Round(w3 - mass_a[3] * (y4 - mass_y[3]) * mass[3, 2], 5);
-                    S = Math.Round(S + mass_a[3] * (y1 - mass_y[0]), 5);
+                    S = Math.Round(S + mass_a[3] * (y4 - mass_y[3]), 5);
                 }
                 sum = Math.Round(E1 + E2 + E3 + E4, 5);
+                number = 0;
                 Console.WriteLine($"Сумма Е = {sum}");
                 Console.WriteLine();
             }
             Console.WriteLine($"Затраченное время: {time.Elapsed}");
         }
-
-        
-
-
-
     }
 
 
