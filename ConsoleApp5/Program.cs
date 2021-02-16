@@ -14,9 +14,9 @@ namespace ConsoleApp5
         {
             Stopwatch time = new Stopwatch();
             time.Start();
-            int[,] mass = { {2, 1, 0 } , { 1, 0, 3 }, { -1, 3, -1 }, { 0, 2, 3 } };
-            int[] mass_y = { 1, 2, 0, 2 };
-            double[] mass_a = { 0.166, 0.09, 0.083, 0.07 };
+            int[,] mass = { {1, 0, 0 } , { 2, 0, 3 }, { 2, 2, -1 }, { 0, -1, 2 } };
+            int[] mass_y = { 1, 2, 3, 2 };
+            double[] mass_a = { 0.5, 0.071, 0.1, 0.166 };
             double[] mass_cnt = new double[4];
 
             double w1 = 1;
